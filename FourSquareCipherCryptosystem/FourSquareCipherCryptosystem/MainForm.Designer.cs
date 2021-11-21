@@ -48,10 +48,12 @@ namespace FourSquareCipherCryptosystem
             this.labelFileToDecrypt = new System.Windows.Forms.Label();
             this.labelChooseFileToDecrypt = new System.Windows.Forms.Label();
             this.buttonChooseFileToDecrypt = new System.Windows.Forms.Button();
+            this.fileSystemWatcher = new System.IO.FileSystemWatcher();
             this.groupBoxFSWOptions.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageEncryption.SuspendLayout();
             this.tabPageDecryption.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxFSWOptions
@@ -135,6 +137,7 @@ namespace FourSquareCipherCryptosystem
             this.checkBoxTurnOnOff.TabIndex = 0;
             this.checkBoxTurnOnOff.Text = "Turn On FSW";
             this.checkBoxTurnOnOff.UseVisualStyleBackColor = true;
+            this.checkBoxTurnOnOff.Click += new System.EventHandler(this.TurnOnOffCheckBox_Click);
             // 
             // tabControl
             // 
@@ -248,6 +251,12 @@ namespace FourSquareCipherCryptosystem
             this.buttonChooseFileToDecrypt.Text = "Choose";
             this.buttonChooseFileToDecrypt.UseVisualStyleBackColor = true;
             // 
+            // fileSystemWatcher
+            // 
+            this.fileSystemWatcher.EnableRaisingEvents = true;
+            this.fileSystemWatcher.Filter = "*.txt";
+            this.fileSystemWatcher.SynchronizingObject = this;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -268,6 +277,7 @@ namespace FourSquareCipherCryptosystem
             this.tabPageEncryption.PerformLayout();
             this.tabPageDecryption.ResumeLayout(false);
             this.tabPageDecryption.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,6 +303,7 @@ namespace FourSquareCipherCryptosystem
         private System.Windows.Forms.Label labelFileToDecrypt;
         private System.Windows.Forms.Label labelChooseFileToDecrypt;
         private System.Windows.Forms.Button buttonChooseFileToDecrypt;
+        private System.IO.FileSystemWatcher fileSystemWatcher;
     }
 }
 
