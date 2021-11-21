@@ -90,6 +90,7 @@ namespace FourSquareCipherCryptosystem
             this.buttonChooseDestinationFolder.TabIndex = 5;
             this.buttonChooseDestinationFolder.Text = "Choose";
             this.buttonChooseDestinationFolder.UseVisualStyleBackColor = true;
+            this.buttonChooseDestinationFolder.Click += new System.EventHandler(this.ChooseDestinationFolderButton_Click);
             // 
             // labelChooseDestinationFolder
             // 
@@ -118,6 +119,7 @@ namespace FourSquareCipherCryptosystem
             this.buttonChooseTargetFolder.TabIndex = 2;
             this.buttonChooseTargetFolder.Text = "Choose";
             this.buttonChooseTargetFolder.UseVisualStyleBackColor = true;
+            this.buttonChooseTargetFolder.Click += new System.EventHandler(this.ChooseTargetFolderButton_Click);
             // 
             // labelChooseTargetFolder
             // 

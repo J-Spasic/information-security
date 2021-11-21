@@ -46,6 +46,12 @@ namespace FourSquareCipherCryptosystem
                 this.fileSystemWatcher.EnableRaisingEvents = !this.fileSystemWatcher.EnableRaisingEvents;
             }
         }
+
+        private void ChooseTargetFolderButton_Click(object sender, EventArgs e) =>
+            this.labelTargetFolder.Text = MainForm.GetSelectedPathFromFolderBrowserDialog();
+
+        private void ChooseDestinationFolderButton_Click(object sender, EventArgs e) =>
+            this.labelDestinationFolder.Text = MainForm.GetSelectedPathFromFolderBrowserDialog();
         #endregion Event(s)
 
         #region Method(s)
@@ -96,6 +102,25 @@ namespace FourSquareCipherCryptosystem
             this.buttonChooseDestinationFolder.Enabled = !this.buttonChooseDestinationFolder.Enabled;
 
             this.tabControl.Enabled = !this.tabControl.Enabled;
+        }
+
+        /// <summary>
+        /// Gets selected path from the folder browser dialog.
+        /// </summary>
+        /// <returns>Selected path if dialog result is OK; otherwise an empty string.</returns>
+        private static string GetSelectedPathFromFolderBrowserDialog()
+        {
+            using var folderBrowserDialog = new FolderBrowserDialog()
+            {
+                SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
+            };
+
+            if (folderBrowserDialog.ShowDialog().Equals(DialogResult.OK))
+            {
+                return folderBrowserDialog.SelectedPath;
+            }
+
+            return string.Empty;
         }
         #endregion Method(s)
     }
