@@ -30,20 +30,20 @@ namespace FourSquareCipherCryptosystem
         private void InitializeComponent()
         {
             this.groupBoxFSWOptions = new System.Windows.Forms.GroupBox();
-            this.checkBoxTurnOnOff = new System.Windows.Forms.CheckBox();
-            this.labelChooseTargetFolder = new System.Windows.Forms.Label();
-            this.buttonChooseTargetFolder = new System.Windows.Forms.Button();
-            this.labelTargetFolder = new System.Windows.Forms.Label();
             this.labelDestinationFolder = new System.Windows.Forms.Label();
             this.buttonChooseDestinationFolder = new System.Windows.Forms.Button();
             this.labelChooseDestinationFolder = new System.Windows.Forms.Label();
+            this.labelTargetFolder = new System.Windows.Forms.Label();
+            this.buttonChooseTargetFolder = new System.Windows.Forms.Button();
+            this.labelChooseTargetFolder = new System.Windows.Forms.Label();
+            this.checkBoxTurnOnOff = new System.Windows.Forms.CheckBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageEncryption = new System.Windows.Forms.TabPage();
-            this.tabPageDecryption = new System.Windows.Forms.TabPage();
-            this.labelFileToEncrypt = new System.Windows.Forms.Label();
-            this.buttonChooseFileToEncrypt = new System.Windows.Forms.Button();
-            this.labelChooseFileToEncrypt = new System.Windows.Forms.Label();
             this.buttonEncryptFile = new System.Windows.Forms.Button();
+            this.labelFileToEncrypt = new System.Windows.Forms.Label();
+            this.labelChooseFileToEncrypt = new System.Windows.Forms.Label();
+            this.buttonChooseFileToEncrypt = new System.Windows.Forms.Button();
+            this.tabPageDecryption = new System.Windows.Forms.TabPage();
             this.buttonDecryptFile = new System.Windows.Forms.Button();
             this.labelFileToDecrypt = new System.Windows.Forms.Label();
             this.labelChooseFileToDecrypt = new System.Windows.Forms.Label();
@@ -69,44 +69,6 @@ namespace FourSquareCipherCryptosystem
             this.groupBoxFSWOptions.TabIndex = 0;
             this.groupBoxFSWOptions.TabStop = false;
             this.groupBoxFSWOptions.Text = "Options related to File System Watcher";
-            // 
-            // checkBoxTurnOnOff
-            // 
-            this.checkBoxTurnOnOff.AutoSize = true;
-            this.checkBoxTurnOnOff.Location = new System.Drawing.Point(10, 25);
-            this.checkBoxTurnOnOff.Name = "checkBoxTurnOnOff";
-            this.checkBoxTurnOnOff.Size = new System.Drawing.Size(95, 19);
-            this.checkBoxTurnOnOff.TabIndex = 0;
-            this.checkBoxTurnOnOff.Text = "Turn On FSW";
-            this.checkBoxTurnOnOff.UseVisualStyleBackColor = true;
-            // 
-            // labelChooseTargetFolder
-            // 
-            this.labelChooseTargetFolder.AutoSize = true;
-            this.labelChooseTargetFolder.Location = new System.Drawing.Point(10, 54);
-            this.labelChooseTargetFolder.Name = "labelChooseTargetFolder";
-            this.labelChooseTargetFolder.Size = new System.Drawing.Size(121, 15);
-            this.labelChooseTargetFolder.TabIndex = 1;
-            this.labelChooseTargetFolder.Text = "Choose Target Folder:";
-            // 
-            // buttonChooseTargetFolder
-            // 
-            this.buttonChooseTargetFolder.Location = new System.Drawing.Point(137, 50);
-            this.buttonChooseTargetFolder.Name = "buttonChooseTargetFolder";
-            this.buttonChooseTargetFolder.Size = new System.Drawing.Size(75, 23);
-            this.buttonChooseTargetFolder.TabIndex = 2;
-            this.buttonChooseTargetFolder.Text = "Choose";
-            this.buttonChooseTargetFolder.UseVisualStyleBackColor = true;
-            // 
-            // labelTargetFolder
-            // 
-            this.labelTargetFolder.AutoSize = true;
-            this.labelTargetFolder.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelTargetFolder.Location = new System.Drawing.Point(30, 80);
-            this.labelTargetFolder.Name = "labelTargetFolder";
-            this.labelTargetFolder.Size = new System.Drawing.Size(97, 15);
-            this.labelTargetFolder.TabIndex = 3;
-            this.labelTargetFolder.Text = "labelTargetFolder";
             // 
             // labelDestinationFolder
             // 
@@ -136,6 +98,44 @@ namespace FourSquareCipherCryptosystem
             this.labelChooseDestinationFolder.TabIndex = 4;
             this.labelChooseDestinationFolder.Text = "Choose Destination Folder:";
             // 
+            // labelTargetFolder
+            // 
+            this.labelTargetFolder.AutoSize = true;
+            this.labelTargetFolder.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelTargetFolder.Location = new System.Drawing.Point(30, 80);
+            this.labelTargetFolder.Name = "labelTargetFolder";
+            this.labelTargetFolder.Size = new System.Drawing.Size(97, 15);
+            this.labelTargetFolder.TabIndex = 3;
+            this.labelTargetFolder.Text = "labelTargetFolder";
+            // 
+            // buttonChooseTargetFolder
+            // 
+            this.buttonChooseTargetFolder.Location = new System.Drawing.Point(137, 50);
+            this.buttonChooseTargetFolder.Name = "buttonChooseTargetFolder";
+            this.buttonChooseTargetFolder.Size = new System.Drawing.Size(75, 23);
+            this.buttonChooseTargetFolder.TabIndex = 2;
+            this.buttonChooseTargetFolder.Text = "Choose";
+            this.buttonChooseTargetFolder.UseVisualStyleBackColor = true;
+            // 
+            // labelChooseTargetFolder
+            // 
+            this.labelChooseTargetFolder.AutoSize = true;
+            this.labelChooseTargetFolder.Location = new System.Drawing.Point(10, 54);
+            this.labelChooseTargetFolder.Name = "labelChooseTargetFolder";
+            this.labelChooseTargetFolder.Size = new System.Drawing.Size(121, 15);
+            this.labelChooseTargetFolder.TabIndex = 1;
+            this.labelChooseTargetFolder.Text = "Choose Target Folder:";
+            // 
+            // checkBoxTurnOnOff
+            // 
+            this.checkBoxTurnOnOff.AutoSize = true;
+            this.checkBoxTurnOnOff.Location = new System.Drawing.Point(10, 25);
+            this.checkBoxTurnOnOff.Name = "checkBoxTurnOnOff";
+            this.checkBoxTurnOnOff.Size = new System.Drawing.Size(95, 19);
+            this.checkBoxTurnOnOff.TabIndex = 0;
+            this.checkBoxTurnOnOff.Text = "Turn On FSW";
+            this.checkBoxTurnOnOff.UseVisualStyleBackColor = true;
+            // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPageEncryption);
@@ -160,6 +160,43 @@ namespace FourSquareCipherCryptosystem
             this.tabPageEncryption.Text = "Encryption";
             this.tabPageEncryption.UseVisualStyleBackColor = true;
             // 
+            // buttonEncryptFile
+            // 
+            this.buttonEncryptFile.Location = new System.Drawing.Point(50, 70);
+            this.buttonEncryptFile.Name = "buttonEncryptFile";
+            this.buttonEncryptFile.Size = new System.Drawing.Size(100, 30);
+            this.buttonEncryptFile.TabIndex = 3;
+            this.buttonEncryptFile.Text = "Encrypt File";
+            this.buttonEncryptFile.UseVisualStyleBackColor = true;
+            // 
+            // labelFileToEncrypt
+            // 
+            this.labelFileToEncrypt.AutoSize = true;
+            this.labelFileToEncrypt.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelFileToEncrypt.Location = new System.Drawing.Point(30, 40);
+            this.labelFileToEncrypt.Name = "labelFileToEncrypt";
+            this.labelFileToEncrypt.Size = new System.Drawing.Size(102, 15);
+            this.labelFileToEncrypt.TabIndex = 2;
+            this.labelFileToEncrypt.Text = "labelFileToEncrypt";
+            // 
+            // labelChooseFileToEncrypt
+            // 
+            this.labelChooseFileToEncrypt.AutoSize = true;
+            this.labelChooseFileToEncrypt.Location = new System.Drawing.Point(10, 14);
+            this.labelChooseFileToEncrypt.Name = "labelChooseFileToEncrypt";
+            this.labelChooseFileToEncrypt.Size = new System.Drawing.Size(128, 15);
+            this.labelChooseFileToEncrypt.TabIndex = 0;
+            this.labelChooseFileToEncrypt.Text = "Choose File to Encrypt:";
+            // 
+            // buttonChooseFileToEncrypt
+            // 
+            this.buttonChooseFileToEncrypt.Location = new System.Drawing.Point(144, 10);
+            this.buttonChooseFileToEncrypt.Name = "buttonChooseFileToEncrypt";
+            this.buttonChooseFileToEncrypt.Size = new System.Drawing.Size(75, 23);
+            this.buttonChooseFileToEncrypt.TabIndex = 1;
+            this.buttonChooseFileToEncrypt.Text = "Choose";
+            this.buttonChooseFileToEncrypt.UseVisualStyleBackColor = true;
+            // 
             // tabPageDecryption
             // 
             this.tabPageDecryption.Controls.Add(this.buttonDecryptFile);
@@ -173,43 +210,6 @@ namespace FourSquareCipherCryptosystem
             this.tabPageDecryption.TabIndex = 1;
             this.tabPageDecryption.Text = "Decryption";
             this.tabPageDecryption.UseVisualStyleBackColor = true;
-            // 
-            // labelFileToEncrypt
-            // 
-            this.labelFileToEncrypt.AutoSize = true;
-            this.labelFileToEncrypt.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelFileToEncrypt.Location = new System.Drawing.Point(30, 40);
-            this.labelFileToEncrypt.Name = "labelFileToEncrypt";
-            this.labelFileToEncrypt.Size = new System.Drawing.Size(102, 15);
-            this.labelFileToEncrypt.TabIndex = 2;
-            this.labelFileToEncrypt.Text = "labelFileToEncrypt";
-            // 
-            // buttonChooseFileToEncrypt
-            // 
-            this.buttonChooseFileToEncrypt.Location = new System.Drawing.Point(144, 10);
-            this.buttonChooseFileToEncrypt.Name = "buttonChooseFileToEncrypt";
-            this.buttonChooseFileToEncrypt.Size = new System.Drawing.Size(75, 23);
-            this.buttonChooseFileToEncrypt.TabIndex = 1;
-            this.buttonChooseFileToEncrypt.Text = "Choose";
-            this.buttonChooseFileToEncrypt.UseVisualStyleBackColor = true;
-            // 
-            // labelChooseFileToEncrypt
-            // 
-            this.labelChooseFileToEncrypt.AutoSize = true;
-            this.labelChooseFileToEncrypt.Location = new System.Drawing.Point(10, 14);
-            this.labelChooseFileToEncrypt.Name = "labelChooseFileToEncrypt";
-            this.labelChooseFileToEncrypt.Size = new System.Drawing.Size(128, 15);
-            this.labelChooseFileToEncrypt.TabIndex = 0;
-            this.labelChooseFileToEncrypt.Text = "Choose File to Encrypt:";
-            // 
-            // buttonEncryptFile
-            // 
-            this.buttonEncryptFile.Location = new System.Drawing.Point(50, 70);
-            this.buttonEncryptFile.Name = "buttonEncryptFile";
-            this.buttonEncryptFile.Size = new System.Drawing.Size(100, 30);
-            this.buttonEncryptFile.TabIndex = 3;
-            this.buttonEncryptFile.Text = "Encrypt File";
-            this.buttonEncryptFile.UseVisualStyleBackColor = true;
             // 
             // buttonDecryptFile
             // 
@@ -260,6 +260,7 @@ namespace FourSquareCipherCryptosystem
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cryptosystem based on a Four-Square Cipher";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBoxFSWOptions.ResumeLayout(false);
             this.groupBoxFSWOptions.PerformLayout();
             this.tabControl.ResumeLayout(false);
