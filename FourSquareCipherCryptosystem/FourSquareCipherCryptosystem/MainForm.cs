@@ -53,6 +53,18 @@ namespace FourSquareCipherCryptosystem
 
         private void ChooseDestinationFolderButton_Click(object sender, EventArgs e) =>
             this.labelDestinationFolder.Text = MainForm.GetSelectedPathFromFolderBrowserDialog();
+
+        private void ChooseFileToEncryptButton_Click(object sender, EventArgs e)
+        {
+            this.labelFileToEncrypt.Text = MainForm.GetFileNameFromOpenFileDialog();
+
+            this.buttonEncryptFile.Enabled = !this.labelFileToEncrypt.Text.Equals(string.Empty);
+        }
+
+        private void ChooseFileToDecryptButton_Click(object sender, EventArgs e)
+        {
+            this.labelFileToDecrypt.Text = MainForm.GetFileNameFromOpenFileDialog();
+        }
         #endregion Event(s)
 
         #region Method(s)
@@ -131,6 +143,26 @@ namespace FourSquareCipherCryptosystem
         {
             this.buttonEncryptFile.Enabled = false;
             this.buttonDecryptFile.Enabled = false;
+        }
+
+        /// <summary>
+        /// Gets selected file name from the open file dialog.
+        /// </summary>
+        /// <returns>Selected file name if dialog result is OK; otherwise an empty string.</returns>
+        private static string GetFileNameFromOpenFileDialog()
+        {
+            using var openFileDialog = new OpenFileDialog()
+            {
+                Filter = "Text files (*.txt)|*.txt",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
+            };
+
+            if (openFileDialog.ShowDialog().Equals(DialogResult.OK))
+            {
+                return openFileDialog.FileName;
+            }
+
+            return string.Empty;
         }
         #endregion Method(s)
     }

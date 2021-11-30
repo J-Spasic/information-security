@@ -201,6 +201,7 @@ namespace FourSquareCipherCryptosystem
             this.buttonChooseFileToEncrypt.TabIndex = 1;
             this.buttonChooseFileToEncrypt.Text = "Choose";
             this.buttonChooseFileToEncrypt.UseVisualStyleBackColor = true;
+            this.buttonChooseFileToEncrypt.Click += new System.EventHandler(this.ChooseFileToEncryptButton_Click);
             // 
             // tabPageDecryption
             // 
@@ -252,6 +253,7 @@ namespace FourSquareCipherCryptosystem
             this.buttonChooseFileToDecrypt.TabIndex = 1;
             this.buttonChooseFileToDecrypt.Text = "Choose";
             this.buttonChooseFileToDecrypt.UseVisualStyleBackColor = true;
+            this.buttonChooseFileToDecrypt.Click += new System.EventHandler(this.ChooseFileToDecryptButton_Click);
             // 
             // fileSystemWatcher
             // 
