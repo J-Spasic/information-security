@@ -42,6 +42,9 @@ namespace FourSquareCipherCryptosystem
 
             if (doChangeState)
             {
+                this.checkBoxTurnOnOff.Text = (this.checkBoxTurnOnOff.Checked) ? "Turn Off FSW" :
+                    "Turn On FSW";
+
                 this.ChangeEnabledStateOfControls();
 
                 this.fileSystemWatcher.EnableRaisingEvents = !this.fileSystemWatcher.EnableRaisingEvents;
