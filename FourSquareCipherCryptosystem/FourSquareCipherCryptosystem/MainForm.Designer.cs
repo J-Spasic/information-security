@@ -44,6 +44,9 @@ namespace FourSquareCipherCryptosystem
             this.labelChooseFileToEncrypt = new System.Windows.Forms.Label();
             this.buttonChooseFileToEncrypt = new System.Windows.Forms.Button();
             this.tabPageDecryption = new System.Windows.Forms.TabPage();
+            this.labelDecryptedFileDestination = new System.Windows.Forms.Label();
+            this.buttonChooseDecryptedFileDestination = new System.Windows.Forms.Button();
+            this.labelChooseDecryptedFileDestination = new System.Windows.Forms.Label();
             this.buttonDecryptFile = new System.Windows.Forms.Button();
             this.labelFileToDecrypt = new System.Windows.Forms.Label();
             this.labelChooseFileToDecrypt = new System.Windows.Forms.Label();
@@ -148,7 +151,7 @@ namespace FourSquareCipherCryptosystem
             this.tabControl.Location = new System.Drawing.Point(12, 180);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(550, 140);
+            this.tabControl.Size = new System.Drawing.Size(550, 175);
             this.tabControl.TabIndex = 1;
             // 
             // tabPageEncryption
@@ -160,7 +163,7 @@ namespace FourSquareCipherCryptosystem
             this.tabPageEncryption.Location = new System.Drawing.Point(4, 24);
             this.tabPageEncryption.Name = "tabPageEncryption";
             this.tabPageEncryption.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEncryption.Size = new System.Drawing.Size(542, 112);
+            this.tabPageEncryption.Size = new System.Drawing.Size(542, 147);
             this.tabPageEncryption.TabIndex = 0;
             this.tabPageEncryption.Text = "Encryption";
             this.tabPageEncryption.UseVisualStyleBackColor = true;
@@ -205,6 +208,9 @@ namespace FourSquareCipherCryptosystem
             // 
             // tabPageDecryption
             // 
+            this.tabPageDecryption.Controls.Add(this.labelDecryptedFileDestination);
+            this.tabPageDecryption.Controls.Add(this.buttonChooseDecryptedFileDestination);
+            this.tabPageDecryption.Controls.Add(this.labelChooseDecryptedFileDestination);
             this.tabPageDecryption.Controls.Add(this.buttonDecryptFile);
             this.tabPageDecryption.Controls.Add(this.labelFileToDecrypt);
             this.tabPageDecryption.Controls.Add(this.labelChooseFileToDecrypt);
@@ -212,17 +218,46 @@ namespace FourSquareCipherCryptosystem
             this.tabPageDecryption.Location = new System.Drawing.Point(4, 24);
             this.tabPageDecryption.Name = "tabPageDecryption";
             this.tabPageDecryption.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDecryption.Size = new System.Drawing.Size(542, 112);
+            this.tabPageDecryption.Size = new System.Drawing.Size(542, 147);
             this.tabPageDecryption.TabIndex = 1;
             this.tabPageDecryption.Text = "Decryption";
             this.tabPageDecryption.UseVisualStyleBackColor = true;
             // 
+            // labelDecryptedFileDestination
+            // 
+            this.labelDecryptedFileDestination.AutoSize = true;
+            this.labelDecryptedFileDestination.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelDecryptedFileDestination.Location = new System.Drawing.Point(30, 90);
+            this.labelDecryptedFileDestination.Name = "labelDecryptedFileDestination";
+            this.labelDecryptedFileDestination.Size = new System.Drawing.Size(164, 15);
+            this.labelDecryptedFileDestination.TabIndex = 5;
+            this.labelDecryptedFileDestination.Text = "labelDecryptedFileDestination";
+            // 
+            // buttonChooseDecryptedFileDestination
+            // 
+            this.buttonChooseDecryptedFileDestination.Location = new System.Drawing.Point(207, 60);
+            this.buttonChooseDecryptedFileDestination.Name = "buttonChooseDecryptedFileDestination";
+            this.buttonChooseDecryptedFileDestination.Size = new System.Drawing.Size(75, 23);
+            this.buttonChooseDecryptedFileDestination.TabIndex = 4;
+            this.buttonChooseDecryptedFileDestination.Text = "Choose";
+            this.buttonChooseDecryptedFileDestination.UseVisualStyleBackColor = true;
+            this.buttonChooseDecryptedFileDestination.Click += new System.EventHandler(this.ChooseDecryptedFileDestinationButton_Click);
+            // 
+            // labelChooseDecryptedFileDestination
+            // 
+            this.labelChooseDecryptedFileDestination.AutoSize = true;
+            this.labelChooseDecryptedFileDestination.Location = new System.Drawing.Point(10, 64);
+            this.labelChooseDecryptedFileDestination.Name = "labelChooseDecryptedFileDestination";
+            this.labelChooseDecryptedFileDestination.Size = new System.Drawing.Size(191, 15);
+            this.labelChooseDecryptedFileDestination.TabIndex = 3;
+            this.labelChooseDecryptedFileDestination.Text = "Choose Decrypted File Destination:";
+            // 
             // buttonDecryptFile
             // 
-            this.buttonDecryptFile.Location = new System.Drawing.Point(50, 70);
+            this.buttonDecryptFile.Location = new System.Drawing.Point(50, 110);
             this.buttonDecryptFile.Name = "buttonDecryptFile";
             this.buttonDecryptFile.Size = new System.Drawing.Size(100, 30);
-            this.buttonDecryptFile.TabIndex = 3;
+            this.buttonDecryptFile.TabIndex = 6;
             this.buttonDecryptFile.Text = "Decrypt File";
             this.buttonDecryptFile.UseVisualStyleBackColor = true;
             // 
@@ -265,7 +300,7 @@ namespace FourSquareCipherCryptosystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 331);
+            this.ClientSize = new System.Drawing.Size(574, 361);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.groupBoxFSWOptions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -308,6 +343,9 @@ namespace FourSquareCipherCryptosystem
         private System.Windows.Forms.Label labelChooseFileToDecrypt;
         private System.Windows.Forms.Button buttonChooseFileToDecrypt;
         private System.IO.FileSystemWatcher fileSystemWatcher;
+        private System.Windows.Forms.Label labelDecryptedFileDestination;
+        private System.Windows.Forms.Button buttonChooseDecryptedFileDestination;
+        private System.Windows.Forms.Label labelChooseDecryptedFileDestination;
     }
 }
 

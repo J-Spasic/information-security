@@ -67,6 +67,15 @@ namespace FourSquareCipherCryptosystem
         private void ChooseFileToDecryptButton_Click(object sender, EventArgs e)
         {
             this.labelFileToDecrypt.Text = MainForm.GetFileNameFromOpenFileDialog();
+
+            this.ChangeEnabledStateOfDecryptButton();
+        }
+
+        private void ChooseDecryptedFileDestinationButton_Click(object sender, EventArgs e)
+        {
+            this.labelDecryptedFileDestination.Text = MainForm.GetSelectedPathFromFolderBrowserDialog();
+
+            this.ChangeEnabledStateOfDecryptButton();
         }
         #endregion Event(s)
 
@@ -80,6 +89,7 @@ namespace FourSquareCipherCryptosystem
             this.labelDestinationFolder.Text = string.Empty;
             this.labelFileToEncrypt.Text = string.Empty;
             this.labelFileToDecrypt.Text = string.Empty;
+            this.labelDecryptedFileDestination.Text = string.Empty;
         }
 
         /// <summary>
@@ -166,6 +176,22 @@ namespace FourSquareCipherCryptosystem
             }
 
             return string.Empty;
+        }
+
+        /// <summary>
+        /// Enables or disables button used for file decryption.
+        /// </summary>
+        private void ChangeEnabledStateOfDecryptButton()
+        {
+            if (!this.labelFileToDecrypt.Text.Equals(string.Empty) &&
+                !this.labelDecryptedFileDestination.Text.Equals(string.Empty))
+            {
+                this.buttonDecryptFile.Enabled = true;
+            }
+            else
+            {
+                this.buttonDecryptFile.Enabled = false;
+            }
         }
         #endregion Method(s)
     }
