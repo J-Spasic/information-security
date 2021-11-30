@@ -16,6 +16,7 @@ namespace FourSquareCipherCryptosystem
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.SetTextOfFolderAndFileLabelsToEmptyString();
+            this.DisableCryptoButtons();
         }
 
         private void TurnOnOffCheckBox_Click(object sender, EventArgs e)
@@ -121,6 +122,15 @@ namespace FourSquareCipherCryptosystem
             }
 
             return string.Empty;
+        }
+
+        /// <summary>
+        /// Disables the file encryption and decryption buttons.
+        /// </summary>
+        private void DisableCryptoButtons()
+        {
+            this.buttonEncryptFile.Enabled = false;
+            this.buttonDecryptFile.Enabled = false;
         }
         #endregion Method(s)
     }
