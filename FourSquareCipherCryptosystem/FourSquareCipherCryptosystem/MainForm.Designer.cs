@@ -176,6 +176,7 @@ namespace FourSquareCipherCryptosystem
             this.buttonEncryptFile.TabIndex = 3;
             this.buttonEncryptFile.Text = "Encrypt File";
             this.buttonEncryptFile.UseVisualStyleBackColor = true;
+            this.buttonEncryptFile.Click += new System.EventHandler(this.EncryptFileButton_Click);
             // 
             // labelFileToEncrypt
             // 
@@ -260,6 +261,7 @@ namespace FourSquareCipherCryptosystem
             this.buttonDecryptFile.TabIndex = 6;
             this.buttonDecryptFile.Text = "Decrypt File";
             this.buttonDecryptFile.UseVisualStyleBackColor = true;
+            this.buttonDecryptFile.Click += new System.EventHandler(this.DecryptFileButton_Click);
             // 
             // labelFileToDecrypt
             // 
@@ -295,6 +297,8 @@ namespace FourSquareCipherCryptosystem
             this.fileSystemWatcher.EnableRaisingEvents = true;
             this.fileSystemWatcher.Filter = "*.txt";
             this.fileSystemWatcher.SynchronizingObject = this;
+            this.fileSystemWatcher.Changed += new System.IO.FileSystemEventHandler(this.FileSystemWatcher_Changed);
+            this.fileSystemWatcher.Created += new System.IO.FileSystemEventHandler(this.FileSystemWatcher_Created);
             // 
             // MainForm
             // 

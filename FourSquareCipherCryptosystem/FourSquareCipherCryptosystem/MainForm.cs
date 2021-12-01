@@ -1,5 +1,9 @@
 ﻿using System;
+using System.IO;
+using System.Threading;
 using System.Windows.Forms;
+
+using FourSquareCipherCryptosystem.Services;
 
 namespace FourSquareCipherCryptosystem
 {
@@ -17,6 +21,8 @@ namespace FourSquareCipherCryptosystem
         {
             this.SetTextOfFolderAndFileLabelsToEmptyString();
             this.DisableCryptoButtons();
+
+            this.fileSystemWatcher.EnableRaisingEvents = false;
         }
 
         private void TurnOnOffCheckBox_Click(object sender, EventArgs e)
@@ -64,6 +70,14 @@ namespace FourSquareCipherCryptosystem
             this.buttonEncryptFile.Enabled = !this.labelFileToEncrypt.Text.Equals(string.Empty);
         }
 
+        private void EncryptFileButton_Click(object sender, EventArgs e)
+        {
+            string filePath = this.labelFileToEncrypt.Text;
+            string destinationFolderPath = this.labelDestinationFolder.Text;
+
+            CryptoService.EncryptFile(filePath, destinationFolderPath);
+        }
+
         private void ChooseFileToDecryptButton_Click(object sender, EventArgs e)
         {
             this.labelFileToDecrypt.Text = MainForm.GetFileNameFromOpenFileDialog();
@@ -76,6 +90,32 @@ namespace FourSquareCipherCryptosystem
             this.labelDecryptedFileDestination.Text = MainForm.GetSelectedPathFromFolderBrowserDialog();
 
             this.ChangeEnabledStateOfDecryptButton();
+        }
+
+        private void DecryptFileButton_Click(object sender, EventArgs e)
+        {
+            string filePath = this.labelFileToDecrypt.Text;
+            string destinationFolderPath = this.labelDecryptedFileDestination.Text;
+
+            CryptoService.DecryptFile(filePath, destinationFolderPath);
+        }
+
+        private void FileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
+        {
+            string filePath = e.FullPath;
+            string destinationFolderPath = this.labelDestinationFolder.Text;
+
+            CryptoService.EncryptFile(filePath, destinationFolderPath);
+        }
+
+        private void FileSystemWatcher_Created(object sender, FileSystemEventArgs e)
+        {
+            string filePath = e.FullPath;
+            string destinationFolderPath = this.labelDestinationFolder.Text;
+
+            MainForm.WaitForFileToBeVisible(filePath);
+
+            CryptoService.EncryptFile(filePath, destinationFolderPath);
         }
         #endregion Event(s)
 
@@ -191,6 +231,27 @@ namespace FourSquareCipherCryptosystem
             else
             {
                 this.buttonDecryptFile.Enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// Prevents exceptions when the file is not yet visible.
+        /// </summary>
+        /// <param name="filePath">Full file path.</param>
+        private static void WaitForFileToBeVisible(string filePath)
+        {
+            while (true)
+            {
+                try
+                {
+                    using var streamReader = new StreamReader(filePath);
+
+                    break;
+                }
+                catch
+                {
+                    Thread.Sleep(1000);
+                }
             }
         }
         #endregion Method(s)
