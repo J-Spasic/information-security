@@ -32,27 +32,27 @@ namespace CryptosystemWithFSW
             this.labelChooseAlgorithm = new System.Windows.Forms.Label();
             this.comboBoxChooseAlgorithm = new System.Windows.Forms.ComboBox();
             this.groupBoxFSWOptions = new System.Windows.Forms.GroupBox();
-            this.checkBoxTurnOnOff = new System.Windows.Forms.CheckBox();
-            this.labelChooseTargetFolder = new System.Windows.Forms.Label();
-            this.buttonChooseTargetFolder = new System.Windows.Forms.Button();
-            this.labelTargetFolder = new System.Windows.Forms.Label();
-            this.labelChooseDestinationFolder = new System.Windows.Forms.Label();
-            this.buttonChooseDestinationFolder = new System.Windows.Forms.Button();
             this.labelDestinationFolder = new System.Windows.Forms.Label();
+            this.buttonChooseDestinationFolder = new System.Windows.Forms.Button();
+            this.labelChooseDestinationFolder = new System.Windows.Forms.Label();
+            this.labelTargetFolder = new System.Windows.Forms.Label();
+            this.buttonChooseTargetFolder = new System.Windows.Forms.Button();
+            this.labelChooseTargetFolder = new System.Windows.Forms.Label();
+            this.checkBoxTurnOnOff = new System.Windows.Forms.CheckBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageEncryption = new System.Windows.Forms.TabPage();
-            this.tabPageDecryption = new System.Windows.Forms.TabPage();
-            this.labelChooseFileToEncrypt = new System.Windows.Forms.Label();
-            this.buttonChooseFileToEncrypt = new System.Windows.Forms.Button();
-            this.labelFileToEncrypt = new System.Windows.Forms.Label();
             this.buttonEncryptFile = new System.Windows.Forms.Button();
-            this.labelChooseFileToDecrypt = new System.Windows.Forms.Label();
-            this.buttonChooseFileToDecrypt = new System.Windows.Forms.Button();
-            this.labelFileToDecrypt = new System.Windows.Forms.Label();
-            this.labelChooseDecryptedFileDestination = new System.Windows.Forms.Label();
-            this.buttonChooseDecryptedFileDestination = new System.Windows.Forms.Button();
-            this.labelDecryptedFileDestination = new System.Windows.Forms.Label();
+            this.labelFileToEncrypt = new System.Windows.Forms.Label();
+            this.buttonChooseFileToEncrypt = new System.Windows.Forms.Button();
+            this.labelChooseFileToEncrypt = new System.Windows.Forms.Label();
+            this.tabPageDecryption = new System.Windows.Forms.TabPage();
             this.buttonDecryptFile = new System.Windows.Forms.Button();
+            this.labelDecryptedFileDestination = new System.Windows.Forms.Label();
+            this.buttonChooseDecryptedFileDestination = new System.Windows.Forms.Button();
+            this.labelChooseDecryptedFileDestination = new System.Windows.Forms.Label();
+            this.labelFileToDecrypt = new System.Windows.Forms.Label();
+            this.buttonChooseFileToDecrypt = new System.Windows.Forms.Button();
+            this.labelChooseFileToDecrypt = new System.Windows.Forms.Label();
             this.fileSystemWatcher = new System.IO.FileSystemWatcher();
             this.groupBoxFSWOptions.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -64,7 +64,7 @@ namespace CryptosystemWithFSW
             // labelChooseAlgorithm
             // 
             this.labelChooseAlgorithm.AutoSize = true;
-            this.labelChooseAlgorithm.Location = new System.Drawing.Point(12, 18);
+            this.labelChooseAlgorithm.Location = new System.Drawing.Point(12, 15);
             this.labelChooseAlgorithm.Name = "labelChooseAlgorithm";
             this.labelChooseAlgorithm.Size = new System.Drawing.Size(107, 15);
             this.labelChooseAlgorithm.TabIndex = 0;
@@ -74,16 +74,16 @@ namespace CryptosystemWithFSW
             // 
             this.comboBoxChooseAlgorithm.DropDownHeight = 100;
             this.comboBoxChooseAlgorithm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxChooseAlgorithm.DropDownWidth = 120;
+            this.comboBoxChooseAlgorithm.DropDownWidth = 135;
             this.comboBoxChooseAlgorithm.FormattingEnabled = true;
             this.comboBoxChooseAlgorithm.IntegralHeight = false;
             this.comboBoxChooseAlgorithm.Items.AddRange(new object[] {
             "Four-Square Cipher",
             "DES"});
-            this.comboBoxChooseAlgorithm.Location = new System.Drawing.Point(125, 15);
+            this.comboBoxChooseAlgorithm.Location = new System.Drawing.Point(125, 12);
             this.comboBoxChooseAlgorithm.MaxDropDownItems = 2;
             this.comboBoxChooseAlgorithm.Name = "comboBoxChooseAlgorithm";
-            this.comboBoxChooseAlgorithm.Size = new System.Drawing.Size(120, 23);
+            this.comboBoxChooseAlgorithm.Size = new System.Drawing.Size(135, 23);
             this.comboBoxChooseAlgorithm.TabIndex = 1;
             // 
             // groupBoxFSWOptions
@@ -102,33 +102,33 @@ namespace CryptosystemWithFSW
             this.groupBoxFSWOptions.TabStop = false;
             this.groupBoxFSWOptions.Text = "Options related to File System Watcher";
             // 
-            // checkBoxTurnOnOff
+            // labelDestinationFolder
             // 
-            this.checkBoxTurnOnOff.AutoSize = true;
-            this.checkBoxTurnOnOff.Location = new System.Drawing.Point(10, 25);
-            this.checkBoxTurnOnOff.Name = "checkBoxTurnOnOff";
-            this.checkBoxTurnOnOff.Size = new System.Drawing.Size(95, 19);
-            this.checkBoxTurnOnOff.TabIndex = 0;
-            this.checkBoxTurnOnOff.Text = "Turn On FSW";
-            this.checkBoxTurnOnOff.UseVisualStyleBackColor = true;
+            this.labelDestinationFolder.AutoSize = true;
+            this.labelDestinationFolder.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelDestinationFolder.Location = new System.Drawing.Point(30, 130);
+            this.labelDestinationFolder.Name = "labelDestinationFolder";
+            this.labelDestinationFolder.Size = new System.Drawing.Size(125, 15);
+            this.labelDestinationFolder.TabIndex = 6;
+            this.labelDestinationFolder.Text = "labelDestinationFolder";
             // 
-            // labelChooseTargetFolder
+            // buttonChooseDestinationFolder
             // 
-            this.labelChooseTargetFolder.AutoSize = true;
-            this.labelChooseTargetFolder.Location = new System.Drawing.Point(10, 54);
-            this.labelChooseTargetFolder.Name = "labelChooseTargetFolder";
-            this.labelChooseTargetFolder.Size = new System.Drawing.Size(121, 15);
-            this.labelChooseTargetFolder.TabIndex = 1;
-            this.labelChooseTargetFolder.Text = "Choose Target Folder:";
+            this.buttonChooseDestinationFolder.Location = new System.Drawing.Point(165, 100);
+            this.buttonChooseDestinationFolder.Name = "buttonChooseDestinationFolder";
+            this.buttonChooseDestinationFolder.Size = new System.Drawing.Size(75, 23);
+            this.buttonChooseDestinationFolder.TabIndex = 5;
+            this.buttonChooseDestinationFolder.Text = "Choose";
+            this.buttonChooseDestinationFolder.UseVisualStyleBackColor = true;
             // 
-            // buttonChooseTargetFolder
+            // labelChooseDestinationFolder
             // 
-            this.buttonChooseTargetFolder.Location = new System.Drawing.Point(137, 50);
-            this.buttonChooseTargetFolder.Name = "buttonChooseTargetFolder";
-            this.buttonChooseTargetFolder.Size = new System.Drawing.Size(75, 23);
-            this.buttonChooseTargetFolder.TabIndex = 2;
-            this.buttonChooseTargetFolder.Text = "Choose";
-            this.buttonChooseTargetFolder.UseVisualStyleBackColor = true;
+            this.labelChooseDestinationFolder.AutoSize = true;
+            this.labelChooseDestinationFolder.Location = new System.Drawing.Point(10, 104);
+            this.labelChooseDestinationFolder.Name = "labelChooseDestinationFolder";
+            this.labelChooseDestinationFolder.Size = new System.Drawing.Size(149, 15);
+            this.labelChooseDestinationFolder.TabIndex = 4;
+            this.labelChooseDestinationFolder.Text = "Choose Destination Folder:";
             // 
             // labelTargetFolder
             // 
@@ -140,33 +140,33 @@ namespace CryptosystemWithFSW
             this.labelTargetFolder.TabIndex = 3;
             this.labelTargetFolder.Text = "labelTargetFolder";
             // 
-            // labelChooseDestinationFolder
+            // buttonChooseTargetFolder
             // 
-            this.labelChooseDestinationFolder.AutoSize = true;
-            this.labelChooseDestinationFolder.Location = new System.Drawing.Point(10, 104);
-            this.labelChooseDestinationFolder.Name = "labelChooseDestinationFolder";
-            this.labelChooseDestinationFolder.Size = new System.Drawing.Size(149, 15);
-            this.labelChooseDestinationFolder.TabIndex = 4;
-            this.labelChooseDestinationFolder.Text = "Choose Destination Folder:";
+            this.buttonChooseTargetFolder.Location = new System.Drawing.Point(137, 50);
+            this.buttonChooseTargetFolder.Name = "buttonChooseTargetFolder";
+            this.buttonChooseTargetFolder.Size = new System.Drawing.Size(75, 23);
+            this.buttonChooseTargetFolder.TabIndex = 2;
+            this.buttonChooseTargetFolder.Text = "Choose";
+            this.buttonChooseTargetFolder.UseVisualStyleBackColor = true;
             // 
-            // buttonChooseDestinationFolder
+            // labelChooseTargetFolder
             // 
-            this.buttonChooseDestinationFolder.Location = new System.Drawing.Point(165, 100);
-            this.buttonChooseDestinationFolder.Name = "buttonChooseDestinationFolder";
-            this.buttonChooseDestinationFolder.Size = new System.Drawing.Size(75, 23);
-            this.buttonChooseDestinationFolder.TabIndex = 5;
-            this.buttonChooseDestinationFolder.Text = "Choose";
-            this.buttonChooseDestinationFolder.UseVisualStyleBackColor = true;
+            this.labelChooseTargetFolder.AutoSize = true;
+            this.labelChooseTargetFolder.Location = new System.Drawing.Point(10, 54);
+            this.labelChooseTargetFolder.Name = "labelChooseTargetFolder";
+            this.labelChooseTargetFolder.Size = new System.Drawing.Size(121, 15);
+            this.labelChooseTargetFolder.TabIndex = 1;
+            this.labelChooseTargetFolder.Text = "Choose Target Folder:";
             // 
-            // labelDestinationFolder
+            // checkBoxTurnOnOff
             // 
-            this.labelDestinationFolder.AutoSize = true;
-            this.labelDestinationFolder.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelDestinationFolder.Location = new System.Drawing.Point(30, 130);
-            this.labelDestinationFolder.Name = "labelDestinationFolder";
-            this.labelDestinationFolder.Size = new System.Drawing.Size(125, 15);
-            this.labelDestinationFolder.TabIndex = 6;
-            this.labelDestinationFolder.Text = "labelDestinationFolder";
+            this.checkBoxTurnOnOff.AutoSize = true;
+            this.checkBoxTurnOnOff.Location = new System.Drawing.Point(10, 25);
+            this.checkBoxTurnOnOff.Name = "checkBoxTurnOnOff";
+            this.checkBoxTurnOnOff.Size = new System.Drawing.Size(95, 19);
+            this.checkBoxTurnOnOff.TabIndex = 0;
+            this.checkBoxTurnOnOff.Text = "Turn On FSW";
+            this.checkBoxTurnOnOff.UseVisualStyleBackColor = true;
             // 
             // tabControl
             // 
@@ -192,6 +192,43 @@ namespace CryptosystemWithFSW
             this.tabPageEncryption.Text = "Encryption";
             this.tabPageEncryption.UseVisualStyleBackColor = true;
             // 
+            // buttonEncryptFile
+            // 
+            this.buttonEncryptFile.Location = new System.Drawing.Point(50, 70);
+            this.buttonEncryptFile.Name = "buttonEncryptFile";
+            this.buttonEncryptFile.Size = new System.Drawing.Size(100, 30);
+            this.buttonEncryptFile.TabIndex = 3;
+            this.buttonEncryptFile.Text = "Encrypt File";
+            this.buttonEncryptFile.UseVisualStyleBackColor = true;
+            // 
+            // labelFileToEncrypt
+            // 
+            this.labelFileToEncrypt.AutoSize = true;
+            this.labelFileToEncrypt.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelFileToEncrypt.Location = new System.Drawing.Point(30, 40);
+            this.labelFileToEncrypt.Name = "labelFileToEncrypt";
+            this.labelFileToEncrypt.Size = new System.Drawing.Size(102, 15);
+            this.labelFileToEncrypt.TabIndex = 2;
+            this.labelFileToEncrypt.Text = "labelFileToEncrypt";
+            // 
+            // buttonChooseFileToEncrypt
+            // 
+            this.buttonChooseFileToEncrypt.Location = new System.Drawing.Point(144, 10);
+            this.buttonChooseFileToEncrypt.Name = "buttonChooseFileToEncrypt";
+            this.buttonChooseFileToEncrypt.Size = new System.Drawing.Size(75, 23);
+            this.buttonChooseFileToEncrypt.TabIndex = 1;
+            this.buttonChooseFileToEncrypt.Text = "Choose";
+            this.buttonChooseFileToEncrypt.UseVisualStyleBackColor = true;
+            // 
+            // labelChooseFileToEncrypt
+            // 
+            this.labelChooseFileToEncrypt.AutoSize = true;
+            this.labelChooseFileToEncrypt.Location = new System.Drawing.Point(10, 14);
+            this.labelChooseFileToEncrypt.Name = "labelChooseFileToEncrypt";
+            this.labelChooseFileToEncrypt.Size = new System.Drawing.Size(128, 15);
+            this.labelChooseFileToEncrypt.TabIndex = 0;
+            this.labelChooseFileToEncrypt.Text = "Choose File to Encrypt:";
+            // 
             // tabPageDecryption
             // 
             this.tabPageDecryption.Controls.Add(this.buttonDecryptFile);
@@ -209,88 +246,14 @@ namespace CryptosystemWithFSW
             this.tabPageDecryption.Text = "Decryption";
             this.tabPageDecryption.UseVisualStyleBackColor = true;
             // 
-            // labelChooseFileToEncrypt
+            // buttonDecryptFile
             // 
-            this.labelChooseFileToEncrypt.AutoSize = true;
-            this.labelChooseFileToEncrypt.Location = new System.Drawing.Point(10, 14);
-            this.labelChooseFileToEncrypt.Name = "labelChooseFileToEncrypt";
-            this.labelChooseFileToEncrypt.Size = new System.Drawing.Size(128, 15);
-            this.labelChooseFileToEncrypt.TabIndex = 0;
-            this.labelChooseFileToEncrypt.Text = "Choose File to Encrypt:";
-            // 
-            // buttonChooseFileToEncrypt
-            // 
-            this.buttonChooseFileToEncrypt.Location = new System.Drawing.Point(144, 10);
-            this.buttonChooseFileToEncrypt.Name = "buttonChooseFileToEncrypt";
-            this.buttonChooseFileToEncrypt.Size = new System.Drawing.Size(75, 23);
-            this.buttonChooseFileToEncrypt.TabIndex = 1;
-            this.buttonChooseFileToEncrypt.Text = "Choose";
-            this.buttonChooseFileToEncrypt.UseVisualStyleBackColor = true;
-            // 
-            // labelFileToEncrypt
-            // 
-            this.labelFileToEncrypt.AutoSize = true;
-            this.labelFileToEncrypt.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelFileToEncrypt.Location = new System.Drawing.Point(30, 40);
-            this.labelFileToEncrypt.Name = "labelFileToEncrypt";
-            this.labelFileToEncrypt.Size = new System.Drawing.Size(102, 15);
-            this.labelFileToEncrypt.TabIndex = 2;
-            this.labelFileToEncrypt.Text = "labelFileToEncrypt";
-            // 
-            // buttonEncryptFile
-            // 
-            this.buttonEncryptFile.Location = new System.Drawing.Point(50, 70);
-            this.buttonEncryptFile.Name = "buttonEncryptFile";
-            this.buttonEncryptFile.Size = new System.Drawing.Size(100, 30);
-            this.buttonEncryptFile.TabIndex = 3;
-            this.buttonEncryptFile.Text = "Encrypt File";
-            this.buttonEncryptFile.UseVisualStyleBackColor = true;
-            // 
-            // labelChooseFileToDecrypt
-            // 
-            this.labelChooseFileToDecrypt.AutoSize = true;
-            this.labelChooseFileToDecrypt.Location = new System.Drawing.Point(10, 14);
-            this.labelChooseFileToDecrypt.Name = "labelChooseFileToDecrypt";
-            this.labelChooseFileToDecrypt.Size = new System.Drawing.Size(129, 15);
-            this.labelChooseFileToDecrypt.TabIndex = 0;
-            this.labelChooseFileToDecrypt.Text = "Choose File to Decrypt:";
-            // 
-            // buttonChooseFileToDecrypt
-            // 
-            this.buttonChooseFileToDecrypt.Location = new System.Drawing.Point(145, 10);
-            this.buttonChooseFileToDecrypt.Name = "buttonChooseFileToDecrypt";
-            this.buttonChooseFileToDecrypt.Size = new System.Drawing.Size(75, 23);
-            this.buttonChooseFileToDecrypt.TabIndex = 1;
-            this.buttonChooseFileToDecrypt.Text = "Choose";
-            this.buttonChooseFileToDecrypt.UseVisualStyleBackColor = true;
-            // 
-            // labelFileToDecrypt
-            // 
-            this.labelFileToDecrypt.AutoSize = true;
-            this.labelFileToDecrypt.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelFileToDecrypt.Location = new System.Drawing.Point(30, 40);
-            this.labelFileToDecrypt.Name = "labelFileToDecrypt";
-            this.labelFileToDecrypt.Size = new System.Drawing.Size(103, 15);
-            this.labelFileToDecrypt.TabIndex = 2;
-            this.labelFileToDecrypt.Text = "labelFileToDecrypt";
-            // 
-            // labelChooseDecryptedFileDestination
-            // 
-            this.labelChooseDecryptedFileDestination.AutoSize = true;
-            this.labelChooseDecryptedFileDestination.Location = new System.Drawing.Point(10, 64);
-            this.labelChooseDecryptedFileDestination.Name = "labelChooseDecryptedFileDestination";
-            this.labelChooseDecryptedFileDestination.Size = new System.Drawing.Size(191, 15);
-            this.labelChooseDecryptedFileDestination.TabIndex = 3;
-            this.labelChooseDecryptedFileDestination.Text = "Choose Decrypted File Destination:";
-            // 
-            // buttonChooseDecryptedFileDestination
-            // 
-            this.buttonChooseDecryptedFileDestination.Location = new System.Drawing.Point(207, 60);
-            this.buttonChooseDecryptedFileDestination.Name = "buttonChooseDecryptedFileDestination";
-            this.buttonChooseDecryptedFileDestination.Size = new System.Drawing.Size(75, 23);
-            this.buttonChooseDecryptedFileDestination.TabIndex = 4;
-            this.buttonChooseDecryptedFileDestination.Text = "Choose";
-            this.buttonChooseDecryptedFileDestination.UseVisualStyleBackColor = true;
+            this.buttonDecryptFile.Location = new System.Drawing.Point(50, 115);
+            this.buttonDecryptFile.Name = "buttonDecryptFile";
+            this.buttonDecryptFile.Size = new System.Drawing.Size(100, 30);
+            this.buttonDecryptFile.TabIndex = 6;
+            this.buttonDecryptFile.Text = "Decrypt File";
+            this.buttonDecryptFile.UseVisualStyleBackColor = true;
             // 
             // labelDecryptedFileDestination
             // 
@@ -302,14 +265,51 @@ namespace CryptosystemWithFSW
             this.labelDecryptedFileDestination.TabIndex = 5;
             this.labelDecryptedFileDestination.Text = "labelDecryptedFileDestination";
             // 
-            // buttonDecryptFile
+            // buttonChooseDecryptedFileDestination
             // 
-            this.buttonDecryptFile.Location = new System.Drawing.Point(50, 115);
-            this.buttonDecryptFile.Name = "buttonDecryptFile";
-            this.buttonDecryptFile.Size = new System.Drawing.Size(100, 30);
-            this.buttonDecryptFile.TabIndex = 6;
-            this.buttonDecryptFile.Text = "Decrypt File";
-            this.buttonDecryptFile.UseVisualStyleBackColor = true;
+            this.buttonChooseDecryptedFileDestination.Location = new System.Drawing.Point(207, 60);
+            this.buttonChooseDecryptedFileDestination.Name = "buttonChooseDecryptedFileDestination";
+            this.buttonChooseDecryptedFileDestination.Size = new System.Drawing.Size(75, 23);
+            this.buttonChooseDecryptedFileDestination.TabIndex = 4;
+            this.buttonChooseDecryptedFileDestination.Text = "Choose";
+            this.buttonChooseDecryptedFileDestination.UseVisualStyleBackColor = true;
+            // 
+            // labelChooseDecryptedFileDestination
+            // 
+            this.labelChooseDecryptedFileDestination.AutoSize = true;
+            this.labelChooseDecryptedFileDestination.Location = new System.Drawing.Point(10, 64);
+            this.labelChooseDecryptedFileDestination.Name = "labelChooseDecryptedFileDestination";
+            this.labelChooseDecryptedFileDestination.Size = new System.Drawing.Size(191, 15);
+            this.labelChooseDecryptedFileDestination.TabIndex = 3;
+            this.labelChooseDecryptedFileDestination.Text = "Choose Decrypted File Destination:";
+            // 
+            // labelFileToDecrypt
+            // 
+            this.labelFileToDecrypt.AutoSize = true;
+            this.labelFileToDecrypt.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelFileToDecrypt.Location = new System.Drawing.Point(30, 40);
+            this.labelFileToDecrypt.Name = "labelFileToDecrypt";
+            this.labelFileToDecrypt.Size = new System.Drawing.Size(103, 15);
+            this.labelFileToDecrypt.TabIndex = 2;
+            this.labelFileToDecrypt.Text = "labelFileToDecrypt";
+            // 
+            // buttonChooseFileToDecrypt
+            // 
+            this.buttonChooseFileToDecrypt.Location = new System.Drawing.Point(145, 10);
+            this.buttonChooseFileToDecrypt.Name = "buttonChooseFileToDecrypt";
+            this.buttonChooseFileToDecrypt.Size = new System.Drawing.Size(75, 23);
+            this.buttonChooseFileToDecrypt.TabIndex = 1;
+            this.buttonChooseFileToDecrypt.Text = "Choose";
+            this.buttonChooseFileToDecrypt.UseVisualStyleBackColor = true;
+            // 
+            // labelChooseFileToDecrypt
+            // 
+            this.labelChooseFileToDecrypt.AutoSize = true;
+            this.labelChooseFileToDecrypt.Location = new System.Drawing.Point(10, 14);
+            this.labelChooseFileToDecrypt.Name = "labelChooseFileToDecrypt";
+            this.labelChooseFileToDecrypt.Size = new System.Drawing.Size(129, 15);
+            this.labelChooseFileToDecrypt.TabIndex = 0;
+            this.labelChooseFileToDecrypt.Text = "Choose File to Decrypt:";
             // 
             // fileSystemWatcher
             // 
@@ -331,6 +331,7 @@ namespace CryptosystemWithFSW
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cryptosystem with File System Watcher";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBoxFSWOptions.ResumeLayout(false);
             this.groupBoxFSWOptions.PerformLayout();
             this.tabControl.ResumeLayout(false);
