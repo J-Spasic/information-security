@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptosystemWithFSW", "Cryp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptosystemExtensionMethods", "CryptosystemExtensionMethods\CryptosystemExtensionMethods.csproj", "{457317C4-FEF7-4272-B52D-97D983108C62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptosystemBusinessLogic", "CryptosystemBusinessLogic\CryptosystemBusinessLogic.csproj", "{C8CC0CD1-291B-4972-922D-84DD4217F316}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{457317C4-FEF7-4272-B52D-97D983108C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{457317C4-FEF7-4272-B52D-97D983108C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{457317C4-FEF7-4272-B52D-97D983108C62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8CC0CD1-291B-4972-922D-84DD4217F316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8CC0CD1-291B-4972-922D-84DD4217F316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8CC0CD1-291B-4972-922D-84DD4217F316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8CC0CD1-291B-4972-922D-84DD4217F316}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
