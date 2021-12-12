@@ -85,6 +85,7 @@ namespace CryptosystemWithFSW
             this.comboBoxChooseAlgorithm.Name = "comboBoxChooseAlgorithm";
             this.comboBoxChooseAlgorithm.Size = new System.Drawing.Size(135, 23);
             this.comboBoxChooseAlgorithm.TabIndex = 1;
+            this.comboBoxChooseAlgorithm.SelectedIndexChanged += new System.EventHandler(this.ChooseAlgorithmComboBox_SelectedIndexChanged);
             // 
             // groupBoxFSWOptions
             // 
@@ -120,6 +121,7 @@ namespace CryptosystemWithFSW
             this.buttonChooseDestinationFolder.TabIndex = 5;
             this.buttonChooseDestinationFolder.Text = "Choose";
             this.buttonChooseDestinationFolder.UseVisualStyleBackColor = true;
+            this.buttonChooseDestinationFolder.Click += new System.EventHandler(this.ChooseDestinationFolderButton_Click);
             // 
             // labelChooseDestinationFolder
             // 
@@ -148,6 +150,7 @@ namespace CryptosystemWithFSW
             this.buttonChooseTargetFolder.TabIndex = 2;
             this.buttonChooseTargetFolder.Text = "Choose";
             this.buttonChooseTargetFolder.UseVisualStyleBackColor = true;
+            this.buttonChooseTargetFolder.Click += new System.EventHandler(this.ChooseTargetFolderButton_Click);
             // 
             // labelChooseTargetFolder
             // 
@@ -167,6 +170,7 @@ namespace CryptosystemWithFSW
             this.checkBoxTurnOnOff.TabIndex = 0;
             this.checkBoxTurnOnOff.Text = "Turn On FSW";
             this.checkBoxTurnOnOff.UseVisualStyleBackColor = true;
+            this.checkBoxTurnOnOff.Click += new System.EventHandler(this.TurnOnOffCheckBox_Click);
             // 
             // tabControl
             // 
@@ -200,6 +204,7 @@ namespace CryptosystemWithFSW
             this.buttonEncryptFile.TabIndex = 3;
             this.buttonEncryptFile.Text = "Encrypt File";
             this.buttonEncryptFile.UseVisualStyleBackColor = true;
+            this.buttonEncryptFile.Click += new System.EventHandler(this.EncryptFileButton_Click);
             // 
             // labelFileToEncrypt
             // 
@@ -219,6 +224,7 @@ namespace CryptosystemWithFSW
             this.buttonChooseFileToEncrypt.TabIndex = 1;
             this.buttonChooseFileToEncrypt.Text = "Choose";
             this.buttonChooseFileToEncrypt.UseVisualStyleBackColor = true;
+            this.buttonChooseFileToEncrypt.Click += new System.EventHandler(this.ChooseFileToEncryptButton_Click);
             // 
             // labelChooseFileToEncrypt
             // 
@@ -254,6 +260,7 @@ namespace CryptosystemWithFSW
             this.buttonDecryptFile.TabIndex = 6;
             this.buttonDecryptFile.Text = "Decrypt File";
             this.buttonDecryptFile.UseVisualStyleBackColor = true;
+            this.buttonDecryptFile.Click += new System.EventHandler(this.DecryptFileButton_Click);
             // 
             // labelDecryptedFileDestination
             // 
@@ -273,6 +280,7 @@ namespace CryptosystemWithFSW
             this.buttonChooseDecryptedFileDestination.TabIndex = 4;
             this.buttonChooseDecryptedFileDestination.Text = "Choose";
             this.buttonChooseDecryptedFileDestination.UseVisualStyleBackColor = true;
+            this.buttonChooseDecryptedFileDestination.Click += new System.EventHandler(this.ChooseDecryptedFileDestinationButton_Click);
             // 
             // labelChooseDecryptedFileDestination
             // 
@@ -301,6 +309,7 @@ namespace CryptosystemWithFSW
             this.buttonChooseFileToDecrypt.TabIndex = 1;
             this.buttonChooseFileToDecrypt.Text = "Choose";
             this.buttonChooseFileToDecrypt.UseVisualStyleBackColor = true;
+            this.buttonChooseFileToDecrypt.Click += new System.EventHandler(this.ChooseFileToDecryptButton_Click);
             // 
             // labelChooseFileToDecrypt
             // 
@@ -316,6 +325,8 @@ namespace CryptosystemWithFSW
             this.fileSystemWatcher.EnableRaisingEvents = true;
             this.fileSystemWatcher.Filter = "*.txt";
             this.fileSystemWatcher.SynchronizingObject = this;
+            this.fileSystemWatcher.Changed += new System.IO.FileSystemEventHandler(this.FileSystemWatcher_Changed);
+            this.fileSystemWatcher.Created += new System.IO.FileSystemEventHandler(this.FileSystemWatcher_Created);
             // 
             // MainForm
             // 
