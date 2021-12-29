@@ -1,8 +1,10 @@
-﻿namespace CryptosystemBusinessLogic.Algorithms
+﻿using System.Text;
+
+namespace CryptosystemBusinessLogic.Algorithms
 {
     public interface ICryptoAlgorithm
     {
-        string Encrypt(string sourceFileName, string plainText);
-        string Decrypt(string sourceFileName, string cipherText);
+        byte[] Encrypt(string sourceFileName, byte[] bytesOfPlainText, Encoding encoding);
+        string Decrypt(string sourceFileName, byte[] bytesOfCipherText, Encoding encoding);
     }
 }

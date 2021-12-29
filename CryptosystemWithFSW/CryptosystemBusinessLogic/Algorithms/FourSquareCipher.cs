@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 using CryptosystemExtensionMethods;
 
@@ -21,12 +22,13 @@ namespace CryptosystemBusinessLogic.Algorithms
         #endregion Constructor(s)
 
         #region Method(s)
-        public string Encrypt(string sourceFileName, string plainText)
+        public byte[] Encrypt(string sourceFileName, byte[] bytesOfPlainText, Encoding encoding)
         {
             List<char> firstKey = this.GenerateFirstKey(sourceFileName.GetLettersOnly());
             List<char> secondKey = this.GenerateSecondKey(firstKey);
 
-            plainText = FourSquareCipher.GetModifiedPlainText(plainText);
+            string plainText = FourSquareCipher.GetModifiedPlainText(
+                encoding.GetString(bytesOfPlainText).GetLettersOnly());
 
             string cipherText = string.Empty;
             for (int i = 0; i < plainText.Length; i += 2)
@@ -41,13 +43,15 @@ namespace CryptosystemBusinessLogic.Algorithms
                 cipherText += secondKey[5 * secondCharColumnIndex + firstCharRowIndex];
             }
 
-            return cipherText;
+            return encoding.GetBytes(cipherText);
         }
 
-        public string Decrypt(string sourceFileName, string cipherText)
+        public string Decrypt(string sourceFileName, byte[] bytesOfCipherText, Encoding encoding)
         {
             List<char> firstKey = this.GenerateFirstKey(sourceFileName.GetLettersOnly());
             List<char> secondKey = this.GenerateSecondKey(firstKey);
+
+            string cipherText = encoding.GetString(bytesOfCipherText);
 
             string plainText = string.Empty;
             for (int i = 0; i < cipherText.Length; i += 2)

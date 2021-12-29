@@ -48,12 +48,9 @@ namespace CryptosystemWithFSW
 
                     doChangeState = false;
                 }
-                else
+                else if (!this.fileSystemWatcher.Path.Equals(this.labelTargetFolder.Text))
                 {
-                    if (!this.fileSystemWatcher.Path.Equals(this.labelTargetFolder.Text))
-                    {
-                        this.fileSystemWatcher.Path = this.labelTargetFolder.Text;
-                    }
+                    this.fileSystemWatcher.Path = this.labelTargetFolder.Text;
                 }
             }
 
@@ -76,7 +73,7 @@ namespace CryptosystemWithFSW
 
         private void ChooseFileToEncryptButton_Click(object sender, EventArgs e)
         {
-            this.labelFileToEncrypt.Text = MainForm.GetFileNameFromOpenFileDialog();
+            this.labelFileToEncrypt.Text = MainForm.GetFileNameFromOpenFileDialog(true);
 
             this.buttonEncryptFile.Enabled = !this.labelFileToEncrypt.Text.Equals(string.Empty);
         }
@@ -91,7 +88,7 @@ namespace CryptosystemWithFSW
 
         private void ChooseFileToDecryptButton_Click(object sender, EventArgs e)
         {
-            this.labelFileToDecrypt.Text = MainForm.GetFileNameFromOpenFileDialog();
+            this.labelFileToDecrypt.Text = MainForm.GetFileNameFromOpenFileDialog(false);
 
             this.ChangeEnabledStateOfDecryptButton();
         }
@@ -215,12 +212,13 @@ namespace CryptosystemWithFSW
         /// <summary>
         /// Gets selected file name from the open file dialog.
         /// </summary>
+        /// <param name="isTextFile">Flag used to filter file types in the open file dialog.</param>
         /// <returns>Selected file name if dialog result is OK; otherwise an empty string.</returns>
-        private static string GetFileNameFromOpenFileDialog()
+        private static string GetFileNameFromOpenFileDialog(bool isTextFile)
         {
             using var openFileDialog = new OpenFileDialog()
             {
-                Filter = "Text files (*.txt)|*.txt",
+                Filter = (isTextFile) ? "Text files (*.txt)|*.txt" : "DAT files (*.dat)|*.dat",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
             };
 
