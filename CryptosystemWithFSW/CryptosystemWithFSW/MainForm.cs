@@ -4,6 +4,7 @@ using System.Threading;
 using System.Windows.Forms;
 
 using CryptosystemBusinessLogic.Algorithms;
+using CryptosystemBusinessLogic.Algorithms.DES;
 using CryptosystemBusinessLogic.Services;
 
 namespace CryptosystemWithFSW
@@ -30,7 +31,8 @@ namespace CryptosystemWithFSW
 
         private void ChooseAlgorithmComboBox_SelectedIndexChanged(object sender, EventArgs e) =>
             CryptoService.SetCryptoAlgorithm((this.comboBoxChooseAlgorithm.SelectedIndex == 0) ?
-                new FourSquareCipher() : new DES());
+                new FourSquareCipher() : (this.comboBoxChooseAlgorithm.SelectedIndex == 1) ?
+                new DES() : new DESWithCFBMode());
 
         private void TurnOnOffCheckBox_Click(object sender, EventArgs e)
         {

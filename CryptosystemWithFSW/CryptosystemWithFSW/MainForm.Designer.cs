@@ -79,7 +79,8 @@ namespace CryptosystemWithFSW
             this.comboBoxChooseAlgorithm.IntegralHeight = false;
             this.comboBoxChooseAlgorithm.Items.AddRange(new object[] {
             "Four-Square Cipher",
-            "DES"});
+            "DES",
+            "DES with CFB mode"});
             this.comboBoxChooseAlgorithm.Location = new System.Drawing.Point(125, 12);
             this.comboBoxChooseAlgorithm.MaxDropDownItems = 2;
             this.comboBoxChooseAlgorithm.Name = "comboBoxChooseAlgorithm";
