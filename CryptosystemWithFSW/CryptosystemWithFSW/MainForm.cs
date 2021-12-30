@@ -28,13 +28,9 @@ namespace CryptosystemWithFSW
             this.fileSystemWatcher.EnableRaisingEvents = false;
         }
 
-        private void ChooseAlgorithmComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.comboBoxChooseAlgorithm.SelectedIndex == 0)
-            {
-                CryptoService.SetCryptoAlgorithm(new FourSquareCipher());
-            }
-        }
+        private void ChooseAlgorithmComboBox_SelectedIndexChanged(object sender, EventArgs e) =>
+            CryptoService.SetCryptoAlgorithm((this.comboBoxChooseAlgorithm.SelectedIndex == 0) ?
+                new FourSquareCipher() : new DES());
 
         private void TurnOnOffCheckBox_Click(object sender, EventArgs e)
         {
