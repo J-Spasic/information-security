@@ -5,7 +5,7 @@ using System.Text;
 
 using CryptosystemExtensionMethods;
 
-namespace CryptosystemBusinessLogic.Algorithms
+namespace CryptosystemBusinessLogic.Algorithms.DES
 {
     public class DES : ICryptoAlgorithm
     {
@@ -123,7 +123,8 @@ namespace CryptosystemBusinessLogic.Algorithms
         private readonly int keyLength;
         private readonly int subkeyLength;
         private readonly int noRounds;
-        private readonly int blockSizeInBits;
+
+        protected readonly int blockSizeInBits;
         #endregion Field(s)
 
         #region Constructor(s)
@@ -138,7 +139,7 @@ namespace CryptosystemBusinessLogic.Algorithms
         #endregion Constructor(s)
 
         #region Method(s)
-        public byte[] Encrypt(string sourceFileName, byte[] bytesOfPlainText, Encoding encoding)
+        public virtual byte[] Encrypt(string sourceFileName, byte[] bytesOfPlainText, Encoding encoding)
         {
             BitArray key = DES.GetExtractedKey(DES.Generate64BitKey(sourceFileName.GetLettersOnly(), encoding),
                 this.keyLength, this.pc1);
@@ -162,7 +163,7 @@ namespace CryptosystemBusinessLogic.Algorithms
             return bytesOfCipherText;
         }
 
-        public string Decrypt(string sourceFileName, byte[] bytesOfCipherText, Encoding encoding)
+        public virtual string Decrypt(string sourceFileName, byte[] bytesOfCipherText, Encoding encoding)
         {
             BitArray key = DES.GetExtractedKey(DES.Generate64BitKey(sourceFileName.GetLettersOnly(), encoding),
                 this.keyLength, this.pc1);
@@ -234,7 +235,7 @@ namespace CryptosystemBusinessLogic.Algorithms
             return subkeys;
         }
 
-        private BitArray GetBitsOfData(byte[] data)
+        protected BitArray GetBitsOfData(byte[] data)
         {
             var bitsOfData = new BitArray(data);
 
