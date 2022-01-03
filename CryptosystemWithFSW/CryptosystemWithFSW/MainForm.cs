@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 using CryptosystemBusinessLogic.Algorithms;
 using CryptosystemBusinessLogic.Algorithms.DES;
+using CryptosystemBusinessLogic.HashFunctions;
 using CryptosystemBusinessLogic.Services;
 
 namespace CryptosystemWithFSW
@@ -27,6 +28,8 @@ namespace CryptosystemWithFSW
             this.DisableCryptoButtons();
 
             this.fileSystemWatcher.EnableRaisingEvents = false;
+
+            CryptoService.SetCryptoHashFunction(new SHA1());
         }
 
         private void ChooseAlgorithmComboBox_SelectedIndexChanged(object sender, EventArgs e) =>
@@ -103,7 +106,13 @@ namespace CryptosystemWithFSW
             string filePath = this.labelFileToDecrypt.Text;
             string destinationFolderPath = this.labelDecryptedFileDestination.Text;
 
-            CryptoService.DecryptFile(filePath, destinationFolderPath);
+            bool isHashValid = CryptoService.DecryptFile(filePath, destinationFolderPath);
+
+            if (!isHashValid)
+            {
+                MessageBox.Show("Hash value mismatch.", "Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
         }
 
         private void FileSystemWatcher_Changed(object sender, FileSystemEventArgs e)
