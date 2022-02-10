@@ -1,5 +1,5 @@
-# information-protection
-Small cryptosystems created for the Information Protection course, developed using .NET 5.
+# information-security
+Small cryptosystems created for the Information Security course, developed using .NET 5.
 
 [FourSquareCipherCryptosystem](https://github.com/J-Spasic/information-protection/tree/main/FourSquareCipherCryptosystem)
 > Windows Forms application with the ability to encrypt Text Documents in the watched folder or manually encrypt and decrypt them using Four-Square Cipher.
