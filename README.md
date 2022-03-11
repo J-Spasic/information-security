@@ -1,5 +1,5 @@
-# information-security
-Small cryptosystems created for the Information Security course, developed using .NET 5.
+# Information Security
+Small cryptosystems created for the `Information Security` course at `Faculty of Electronic Engineering, University of Niš`, developed using .NET 5.
 
 [FourSquareCipherCryptosystem](https://github.com/J-Spasic/information-security/tree/main/FourSquareCipherCryptosystem)
 > Windows Forms application with the ability to encrypt Text Documents in the watched folder or manually encrypt and decrypt them using Four-Square Cipher.
